@@ -4,19 +4,19 @@ import { fetchInvoiceById, fetchCustomers } from "@/app/lib/data";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "Edit",
-// };
+export const metadata: Metadata = {
+  title: "Edit",
+};
 
-export async function generateMetadata({
-  params: {
-    params: { id: string },
-  },
-}: Promise<Metadata>) {
-  return {
-    title: `Edit ${params.id}`,
-  };
-}
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { id: string };
+// }): Promise<Metadata> {
+//   return {
+//     title: `Edit ${params.id}`,
+//   };
+// }
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
